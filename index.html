@@ -7,18 +7,44 @@
   <link rel="stylesheet" href="./assets/style.css">
   <title>Document</title>
 </head>
-<body>
+<body class="bg-black">
   <div class="container">
     <div class="row">
-      <div class="col-6">
-        <ul id="support">
-        </ul>
-        <button id="new-support" class="btn-primary">See other support members</button>
+      <div class="col-12">
+        <h1 class="text-center green">
+          Boolean
+        </h1>
+        <p class="text-center white">
+          Meet our highly professional and carefully selected team.
+        </p>
       </div>
       <div class="col-6">
-        <ul id="commercial">
-        </ul>
-        <button id="new-commercial" class="btn-primary">See other commercial members</button>
+        <div class="row g-0">
+          <h3 class="green text-center">Our teachers</h3>
+          <div class="col-6">
+            <ul id="teacher-names" class="list-group list-group-flush"></ul>
+          </div>
+          <div class="col-6">
+            <ul id="teacher" class="list-group list-group-flush"></ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="row g-0">
+          <h3 class="green text-center">Our tutors</h3>
+          <div class="col-6">
+            <ul id="tutor-names" class="list-group list-group-flush"></ul>
+          </div>
+          <div class="col-6">
+            <ul id="tutor" class="list-group list-group-flush"></ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 d-flex justify-content-center">
+        <button id="new-teacher" class="btn btn-success mt-5">See other teachers</button>
+      </div>
+      <div class="col-6 d-flex justify-content-center">
+        <button id="new-tutor" class="btn btn-success mt-5">See other tutors</button>
       </div>
     </div>
   </div>

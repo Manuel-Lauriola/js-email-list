@@ -1,32 +1,50 @@
 //dichiaro le variabili del mio html
-const commercial = document.getElementById(`commercial`)
-const support = document.getElementById(`support`)
+const teacher = document.getElementById(`teacher`)
+const tutor = document.getElementById(`tutor`)
 //per il bonus 2 prendo i 2 bottoni
-const newCommercial = document.getElementById(`new-commercial`)
-const newSupport = document.getElementById(`new-support`) 
+const newteacher = document.getElementById(`new-teacher`)
+const newtutor = document.getElementById(`new-tutor`)
+//variabili nomi casuali
+const teacherNames = document.getElementById(`teacher-names`)
+const tutorNames = document.getElementById(`tutor-names`) 
 
 //definisco la funzione che genererà 5 mail casuali
 const randomMails = (destination) => {
   for (let i=0; i<5; i++) {
     axios.get(`https://flynn.boolean.careers/exercises/api/random/mail`).then((resp)=>{
-      destination.innerHTML += `<li>${resp.data.response}</li>`
+      destination.innerHTML += `<li class="list-group-item"><a href="#">${resp.data.response}</a></li>`
+    })
+  }
+}
+
+//funzione nomi casuali
+const randomNames = (destination) => {
+  for (let i=0; i<5; i++) {
+    axios.get(`https://flynn.boolean.careers/exercises/api/random/name`).then((resp)=>{
+      destination.innerHTML += `<li class="list-group-item">${resp.data.response}</li>`
     })
   }
 }
 
 //invoco le funzioni
-randomMails(support)
-randomMails(commercial)
+randomMails(tutor)
+randomMails(teacher)
+randomNames(teacherNames)
+randomNames(tutorNames)
 
 //aggiungo la funzione ai bottoni
-newSupport.addEventListener(`click`, (e) => {
+newtutor.addEventListener(`click`, (e) => {
   e.preventDefault
-  support.innerHTML = ""
-  randomMails(support)
+  tutorNames.innerHTML = ""
+  tutor.innerHTML = ""
+  randomNames(tutorNames)
+  randomMails(tutor)
 })
 
-newCommercial.addEventListener(`click`, (e) => {
+newteacher.addEventListener(`click`, (e) => {
   e.preventDefault
-  commercial.innerHTML = ""
-  randomMails(commercial)
+  teacherNames.innerHTML = ""
+  teacher.innerHTML = ""
+  randomNames(teacherNames)
+  randomMails(teacher)
 })
